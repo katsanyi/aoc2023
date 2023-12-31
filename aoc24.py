@@ -92,16 +92,18 @@ def is_intersecting(e1, e2, mn, mx):
     dy2 = y22 - y12
     dx1 = abs(dy1) * (mx - mn) / (abs(dy1) + abs(dy2))
     x = dx1 + mn
-    print('e1',e1)
-    print('e2',e2)
-    print('dx1',dx1)
-    print('x',x)
+#    print('e1',e1)
+#    print('e2',e2)
+#    print('dx1',dx1)
+#    print('x',x)
     if sign(x - e1[0][0]) != sign(e1[1][0]):
-        print('past for e1')
         return False
     if sign(x - e2[0][0]) != sign(e2[1][0]):
-        print('past for e2')
         return False
+    y = value_at(e1, x)
+    if y > mx or y < mn:
+        return False
+#        print('outside', x, y)
     return True
 
 
@@ -110,9 +112,8 @@ def score(l, mn, mx):
     ll = len(l)
     for i in range(ll):
         for j in range(i+1, ll):
-            print(i,j)
+#            print(i,j)
             if is_intersecting(l[i], l[j], mn, mx):
                 s += 1
-            if j == 10:
-                sys.exit(0)
+#            if j == 10: sys.exit(0)
     return s

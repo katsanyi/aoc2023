@@ -41,6 +41,6 @@ def test_score():
     slist = aoc24.readfile(r'C:\py\github\aoc2023\24.dat')
     l = aoc24.read(slist)
     s = aoc24.score(l, 200000000000000, 400000000000000)
-    assert s == 2
+    assert s == 16018
     # 15317 too low
     # 22778 too high
