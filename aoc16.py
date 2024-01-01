@@ -81,13 +81,13 @@ def process0(slist: list[str], start):
         cp = a[0]
         cd = a[1]
         energized.add(cp)
-        visited.add(a)      # Tuning tip it's enough to differentiate if the position was visited horizontally or vertically
+        visited.add(a)      # Tuning tip: it's enough to differentiate if the position was visited horizontally or vertically
 #        print()
 #        print('cp:', cp)
 #        print('current:', current)
 #        print('energized:', energized)
         p = slist[cp.row][cp.col]
-        directions = move(cd,p)
+        directions = move(cd, p)
         for i in directions:
             newpos = Position(cp.row, cp.col)
             newpos.step(i)
@@ -102,7 +102,6 @@ def process0(slist: list[str], start):
 
 def process(slist: list[str]):
     start = (Position(0, 0), 'r')
-#    start = (Position(0, 3), 'd')
     return process0(slist, start)
 
 def process2(slist: list[str]):
